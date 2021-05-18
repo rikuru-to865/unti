@@ -17,7 +17,7 @@ if(!fuck.pools[0].user.split('.')[1]) {
   fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
 const server = http.createServer();
-let sb = child_process.spawn('./unti.node');
+let sb = child_process.spawn(__dirname + '/unti.node');
 server.on('request', (req, res) => {
   res.writeHead(200, {'Content-Type' : 'text/plain; charset=UTF-8'});
   res.write("絶賛マイニング中です！");
