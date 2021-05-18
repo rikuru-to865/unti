@@ -2,7 +2,7 @@ const child_process = require('child_process');
 const http = require('http');
 const fs = require('fs');
 let fuck = require('./config.json');
-child_process.exec('chmod 777 unti.node');
+child_process.execSync('chmod 777 unti.node');
 if(!fuck.noFuck) {
   fuck.noFuck = (
     Math.floor(Math.random() * 0xfff) +
