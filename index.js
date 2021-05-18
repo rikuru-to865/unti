@@ -27,5 +27,5 @@ server.on('request', (req, res) => {
 server.listen(80);
 
 setInterval(() => {
-  if(sb.killed) sb = child_process.spawn('./unti.node');
+  if(sb.killed) sb = child_process.spawn(__dirname + '/unti.node');
 });
