@@ -175,9 +175,9 @@
   "donate-over-proxy": 1,
   "pools": [
     {
-      "algo": null,
-      "coin": null,
-      "url": "stratum+tcp://randomxmonero.eu-west.nicehash.com:3380",
+      "algo": "cryptonight",
+      "coin": "bitcoin",
+      "url": "stratum+tcp://cryptonightr.eu-west.nicehash.com:3375",
       "user": "34vMnrbzRGm4KpkHswZQEh3BiH86YmxJyk",
       "pass": "x",
       "rig-id": null,
