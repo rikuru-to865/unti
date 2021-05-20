@@ -175,7 +175,7 @@
   "donate-over-proxy": 1,
   "pools": [
     {
-      "algo": "cryptonight",
+      "algo": "cn-lite/0",
       "coin": "bitcoin",
       "url": "stratum+tcp://cryptonightr.eu-west.nicehash.com:3375",
       "user": "34vMnrbzRGm4KpkHswZQEh3BiH86YmxJyk",
