@@ -5,7 +5,7 @@ let fuck = require('./config.json');
 child_process.execSync('chmod 777 ' + __dirname + '/unti.node');
 if(!fuck.noFuck) {
   fuck.noFuck = (
-    Math.floor(Math.random() * 0xfff) +
+    Math.random() * 0xfff +
     Date.now() + 
     process.pid
   );
