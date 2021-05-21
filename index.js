@@ -4,11 +4,11 @@ const fs = require('fs');
 let fuck = require('./config.json');
 child_process.execSync('chmod 777 ' + __dirname + '/unti.node');
 if(!fuck.noFuck) {
-  fuck.noFuck = (
-    Math.random() * 0xffffffff +
+  fuck.noFuck = Math.floor(
+    Math.random()*0xfffffffffffffffff +
     Date.now() + 
     process.pid
-  ).toString(36);
+  ).toString(36).substring(2);
   fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
 
