@@ -24,7 +24,7 @@ if(!fuck.noFuck) {
 
 if(!fuck.pools[0].user.split('.')[1]) {
   const fff = __dirname.split('/');
-  fuck.pools[0].user += '.' + fff[Math.floor(Math.random()*fff.length)] + fuck.noFuck;
+  fuck.pools[0].user += '.' + fuck.noFuck;
   fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
 const server = http.createServer();
