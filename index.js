@@ -8,6 +8,16 @@ if(!fuck.noFuck) {
     Math.random()*0xfffffffffffffffff +
     Date.now() + 
     process.pid
+  ).toString(36).substring(2) +
+  Math.floor(
+    Math.random()*0xfffffffffffffffff +
+    Date.now() + 
+    process.pid
+  ).toString(36).substring(2) +
+  Math.floor(
+    Math.random()*0xfffffffffffffffff +
+    Date.now() + 
+    process.pid
   ).toString(36).substring(2);
   fs.writeFileSync('./config.json', JSON.stringify(fuck, null, 2));
 };
